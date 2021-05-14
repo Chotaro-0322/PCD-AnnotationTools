@@ -1,0 +1,43 @@
+body {
+    background-color: #f5deb3;
+}
+
+.allofView{
+    display: flex;
+}
+
+.leftside{
+    display: flex;
+    flex-direction: column;
+}
+
+.back_frontButton{
+    display: flex;
+}
+
+.back_frontButton button{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 8px 20px;
+    justify-content: center;
+}
+
+th{
+    background-color: #cdefff;
+    width: 30px;
+}
+
+td{
+    background-color: #ffffff;
+    text-align: center;
+}
+
+th,td{
+    border: solid 1px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 250px;
+}

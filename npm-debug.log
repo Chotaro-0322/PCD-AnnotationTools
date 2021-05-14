@@ -1,0 +1,93 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/chohome/.nvm/v0.11.16/bin/node',
+1 verbose cli   '/home/chohome/.nvm/v0.11.16/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   '--save',
+1 verbose cli   'crypto-random-string' ]
+2 info using npm@2.3.0
+3 info using node@v0.11.16
+4 silly cache add args [ 'crypto-random-string', null ]
+5 verbose cache add spec crypto-random-string
+6 silly cache add parsed spec { raw: 'crypto-random-string',
+6 silly cache add   scope: null,
+6 silly cache add   name: 'crypto-random-string',
+6 silly cache add   rawSpec: '',
+6 silly cache add   spec: '*',
+6 silly cache add   type: 'range' }
+7 verbose addNamed crypto-random-string@*
+8 silly addNamed semver.valid null
+9 silly addNamed semver.validRange *
+10 silly addNameRange { name: 'crypto-random-string', range: '*', hasData: false }
+11 silly mapToRegistry name crypto-random-string
+12 silly mapToRegistry using default registry
+13 silly mapToRegistry registry https://registry.npmjs.org/
+14 silly mapToRegistry uri https://registry.npmjs.org/crypto-random-string
+15 verbose addNameRange registry:https://registry.npmjs.org/crypto-random-string not in flight; fetching
+16 verbose request uri https://registry.npmjs.org/crypto-random-string
+17 verbose request no auth needed
+18 info attempt registry request try #1 at 23:47:18
+19 verbose request id 6038d08ba2cf14c6
+20 http request GET https://registry.npmjs.org/crypto-random-string
+21 http 200 https://registry.npmjs.org/crypto-random-string
+22 silly get cb [ 200,
+22 silly get   { date: 'Mon, 19 Apr 2021 14:47:19 GMT',
+22 silly get     'content-type': 'application/json',
+22 silly get     'transfer-encoding': 'chunked',
+22 silly get     connection: 'keep-alive',
+22 silly get     'set-cookie': [ '__cfduid=d2094049886a4816c08bf3c69bfe8428c1618843638; expires=Wed, 19-May-21 14:47:18 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+22 silly get     'cf-ray': '6426ed6419665f47-NRT',
+22 silly get     'cache-control': 'public, max-age=300',
+22 silly get     etag: 'W/"2213c4f84163398bafbe555d8209b827"',
+22 silly get     'last-modified': 'Mon, 05 Apr 2021 08:12:27 GMT',
+22 silly get     vary: 'accept-encoding, accept',
+22 silly get     'cf-cache-status': 'EXPIRED',
+22 silly get     'cf-request-id': '098c32b28d00005f4712851000000001',
+22 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+22 silly get     server: 'cloudflare',
+22 silly get     'content-encoding': 'gzip' } ]
+23 silly addNameRange number 2 { name: 'crypto-random-string', range: '*', hasData: true }
+24 silly addNameRange versions [ 'crypto-random-string',
+24 silly addNameRange   [ '1.0.0',
+24 silly addNameRange     '2.0.0',
+24 silly addNameRange     '3.0.0',
+24 silly addNameRange     '3.0.1',
+24 silly addNameRange     '3.1.0',
+24 silly addNameRange     '3.2.0',
+24 silly addNameRange     '3.3.0',
+24 silly addNameRange     '3.3.1',
+24 silly addNameRange     '4.0.0' ] ]
+25 verbose addNamed crypto-random-string@4.0.0
+26 silly addNamed semver.valid 4.0.0
+27 silly addNamed semver.validRange 4.0.0
+28 silly mapToRegistry name crypto-random-string
+29 silly mapToRegistry using default registry
+30 silly mapToRegistry registry https://registry.npmjs.org/
+31 silly mapToRegistry uri https://registry.npmjs.org/crypto-random-string
+32 verbose addRemoteTarball https://registry.npmjs.org/crypto-random-string/-/crypto-random-string-4.0.0.tgz not in flight; adding
+33 verbose addRemoteTarball [ 'https://registry.npmjs.org/crypto-random-string/-/crypto-random-string-4.0.0.tgz',
+33 verbose addRemoteTarball   '5a3cc53d7dd86183df5da0312816ceeeb5bb1fc2' ]
+34 info retry fetch attempt 1 at 23:47:19
+35 info attempt registry request try #1 at 23:47:19
+36 http fetch GET https://registry.npmjs.org/crypto-random-string/-/crypto-random-string-4.0.0.tgz
+37 http fetch 200 https://registry.npmjs.org/crypto-random-string/-/crypto-random-string-4.0.0.tgz
+38 silly fetchAndShaCheck shasum 5a3cc53d7dd86183df5da0312816ceeeb5bb1fc2
+39 verbose addTmpTarball /tmp/npm-25866-02313c58/registry.npmjs.org/crypto-random-string/-/crypto-random-string-4.0.0.tgz not in flight; adding
+40 verbose addTmpTarball already have metadata; skipping unpack for crypto-random-string@4.0.0
+41 verbose stack Error: EACCES, mkdir '/home/chohome/.npm/crypto-random-string'
+41 verbose stack     at Error (native)
+42 verbose cwd /home/chohome/electron/lidar
+43 error Linux 5.4.0-72-generic
+44 error argv "/home/chohome/.nvm/v0.11.16/bin/node" "/home/chohome/.nvm/v0.11.16/bin/npm" "i" "--save" "crypto-random-string"
+45 error node v0.11.16
+46 error npm  v2.3.0
+47 error path /home/chohome/.npm/crypto-random-string
+48 error code EACCES
+49 error errno -13
+50 error Error: EACCES, mkdir '/home/chohome/.npm/crypto-random-string'
+50 error     at Error (native)
+50 error  { [Error: EACCES, mkdir '/home/chohome/.npm/crypto-random-string']
+50 error   errno: -13,
+50 error   code: 'EACCES',
+50 error   path: '/home/chohome/.npm/crypto-random-string' }
+51 error Please try running this command again as root/Administrator.
+52 verbose exit [ -13, true ]

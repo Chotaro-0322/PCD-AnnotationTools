@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "electron ./src"
+  },
+  "devDependencies": {
+    "electron": "^1.8.4"
+  },
+  "private": true,
+  "dependencies": {
+    "crypto-random-string": "^4.0.0",
+    "glob": "^7.1.6",
+    "json": "^10.0.0",
+    "python-shell": "^3.0.0"
+  }
+}
