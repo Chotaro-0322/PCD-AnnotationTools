@@ -6,28 +6,40 @@ import json
 from collections import OrderedDict
 import pcl
 
-warnings.simplefilter('ignore')
+#warnings.simplefilter('ignore')
 #print(pcl.__file__)
 
 
-empty = sys.stdin.readline()
+#empty = sys.stdin.readline()
 
 f = open('./src/pcl_json.json', 'r')
-#print("f is", f)
+# print("f is", f)
 json_dict = json.load(f)
 
-dat1 = json_dict['npy_name']
+dat1 = json_dict['npy_name'][0]
+if dat1[-3:] == "npy":
+    original_pc = np.load(dat1)
 
-original_pc = np.load(dat1)
+    pos = original_pc[:, :, 0:3]
+    pos_zmin = sorted(pos[:, :, 2].ravel())[4000]
 
-pos = original_pc[:, :, 0:3]
-#print("pos.shape is ", pos.shape)
+    # print("pos_zmin is ", pos_zmin)
+    pos_without_ground = pos[pos[:, :, 2] > pos_zmin + 0.3]
+    # print("pos_out_ground is ", pos_without_ground.shape)
+    pos_2dim = pos_without_ground.reshape([-1, 3])
 
-pos_zmin = sorted(pos[:, :, 2].ravel())[4000]
-#print("pos_zmin is ", pos_zmin)
-pos_without_ground = pos[pos[:, :, 2] > pos_zmin + 0.2]
-#print("pos_out_ground is ", pos_without_ground.shape)
-pos_2dim = pos_without_ground.reshape([-1, 3])
+if dat1[-3:] == "txt":
+    original_pc = np.loadtxt(dat1)
+    #print("original_pc is ", original_pc)
+
+    #print("pos.shape is ", original_pc.shape)
+    pos = original_pc[:, 0:3].astype(np.float32)
+    pos_zmin = sorted(pos[:, 2].ravel())[4000]
+
+    #print("pos_zmin is ", pos_zmin)
+    pos_without_ground = pos[pos[:, 2] > pos_zmin + 0.7]
+    # print("pos_out_ground is ", pos_without_ground.shape)
+    pos_2dim = pos_without_ground.reshape([-1, 3])
 
 # pointcloud のクラスタリング
 pointcloud = pcl.PointCloud(pos_2dim)

@@ -98,9 +98,9 @@ var mouse = new THREE.Vector2();
 var offset = new THREE.Vector3();
 var intersection = new THREE.Vector3();
 
-canvas.addEventListener('mousedown', mousedownEvent, false );
-canvas.addEventListener('mousemove', mousemoveEvent, false );
-canvas.addEventListener('mouseup', mouseupEvent, false );
+// canvas.addEventListener('mousedown', mousedownEvent, false );
+// canvas.addEventListener('mousemove', mousemoveEvent, false );
+// canvas.addEventListener('mouseup', mouseupEvent, false );
 // シーンを作成
 const scene = new THREE.Scene();
 
@@ -140,21 +140,24 @@ axes.position.y = -2;
 scene.add(axes);
 
 // test--------------------------------------------------------------
-var object = [];
-var geometry = new THREE.BoxGeometry(1, 1, 1);
-var material_box = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-// オブジェクトの作成
-var cube = new THREE.Mesh( geometry, material_box );
-// オブジェクトの位置調整
-cube.position.x = 2.0;
-// オブジェクトをシーンに追加
-scene.add(cube);
-object.push(cube);
+// var object = [];
+// var geometry = new THREE.BoxGeometry(1, 1, 1);
+// var material_box = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+// // オブジェクトの作成
+// var cube = new THREE.Mesh( geometry, material_box );
+// // オブジェクトの位置調整
+// cube.position.x = 2.0;
+// // オブジェクトをシーンに追加
+// scene.add(cube);
+// object.push(cube);
 // ------------------------------------------------------------------
 
 // npy ファイルの一覧を出す
-var npy_list = npy_search();
-ipcRenderer.send('pcl_process', npy_list[0]);
+//var npy_list = npy_search();
+var txt_list = txt_search();
+//ipcRenderer.send('pcl_process', npy_list[0]);
+console.log("txt_list is ", txt_list);
+ipcRenderer.send('pcl_process', txt_list);
 
 var jsondat = JSON.parse(fs.readFileSync('./src/clustaring_data.json', 'utf8') || "null");
 var all_data = jsondat["all_data"];
@@ -189,17 +192,17 @@ for(let i = 0; i < clust_1len; i++){
     //evalによってクラスターごとにmeshを生成
     eval("var clust_"+i+" = new ClustaringPlot()");
     eval("var mesh_"+i+" = clust_"+i+".cleateObj(clust_data["+i+"], color_list["+i+"])");
-    eval("var cubemesh_"+i+" = clust_"+i+".cleateCube(clust_maxmin["+i+"], color_list["+i+"])");
+    // eval("var cubemesh_"+i+" = clust_"+i+".cleateCube(clust_maxmin["+i+"], color_list["+i+"])");
     eval("scene.add(mesh_"+i+")");
-    eval("scene.add(cubemesh_"+i+")");
-    eval("object.push(cubemesh_"+i+")");
+    // eval("scene.add(cubemesh_"+i+")");
+    // eval("object.push(cubemesh_"+i+")");
 };
 
 //sceneの設定を表示
 console.log("scene is", scene);
 
 
-table_con();
+//table_con();
 tick();
 
 //}
@@ -266,7 +269,7 @@ function mousedownEvent(event){
         controls.enabled = false;
         boxobj = intersects[0].object;
         boxobj.material.color.setRGB(255, 0, 0);
-        
+
         if(raycaster.ray.intersectPlane(plane, intersection)){
             offset.copy(intersection).sub(boxobj.position);
         }

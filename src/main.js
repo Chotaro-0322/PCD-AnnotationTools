@@ -63,7 +63,7 @@ ipcMain.on('npy_list_num', (event, arg) => {
 });
 
 ipcMain.on('pcl_process', (event, arg) => {
-    var JSONFILEPATH = "./pcl_json.json";
+    var JSONFILEPATH = "./src/pcl_json.json";
     var json = {
         npy_name:arg
     };

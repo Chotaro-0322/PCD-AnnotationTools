@@ -19,4 +19,8 @@ function npy_search(){
     return glob.sync("./npy_data/*.npy");
 };
 
+function txt_search(){
+    return glob.sync("./velodyne_points/data/*.txt");
+}
+
 
