@@ -1,7 +1,7 @@
 # PCD-Viewer-js<br>
 ## Example<br>
 This is the ```.pcd``` viewer, that can use clustaring.<br>
-But I will make .pcd Annotation tool in future. <br>
+But I will make pcd Annotation tool in future. <br>
 So this project is not complete.
 ## Install <br>
 ### ・Install npm
