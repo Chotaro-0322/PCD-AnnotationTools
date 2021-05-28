@@ -15,7 +15,8 @@ https://github.com/strawlab/python-pcl
 pcl-python require numpy version > 1.20.3 
 <br><br>
 ## Usage
-```electron src/```
+```electron src/```<br>
+now this tool support ```.npy``` and ```.txt``` 
 <br>
 ## Photo
 ![Photo](https://imgur.com/QODIyn2.png)
