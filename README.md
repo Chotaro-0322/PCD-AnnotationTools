@@ -11,5 +11,4 @@ https://github.com/strawlab/python-pcl
 ```electron src/```
 <br>
 ## Photo
-<img src="https://imgur.com/QODIyn2" alt="Photo" title="Lidar_photo">
-[Imgur](https://imgur.com/QODIyn2)
+![Photo](https://imgur.com/a/rjnGcAa "Photo_lidar")
